@@ -7,6 +7,7 @@ public class XDOTManager : MonoBehaviour
     public Vector3[] history0;
     public Vector3[] history1;
     public TimeSync timeSync;
+    public Vibrator vibrator;
     public bool Sync;
     public float maxDiff = 0;
     public float maxRatio = 0;
@@ -49,7 +50,7 @@ public class XDOTManager : MonoBehaviour
             max0 = history0[^1].y;
         if(Mathf.Abs(history1[^1].y) > max1)
             max1 = history1[^1].y;
-        if(max0 > 50 && max1 > 50)
+        if(max0 > vibrator.ValueThreshold && max1 > vibrator.ValueThreshold)
             maxRatio = max1/max0;
         else
             maxRatio = 0;
