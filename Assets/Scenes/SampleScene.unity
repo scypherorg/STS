@@ -908,9 +908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Vibrator
   timeSync: {fileID: 870261833}
-  RatioThreshold: 1.7
-  ValueThreshold: 50
-  TimeBuffer100MS: 3
+  RatioThreshold: 1.5
+  ValueThreshold: 20
+  TimeBuffer100MS: 2
+  ratio: 0
 --- !u!1 &1216284827
 GameObject:
   m_ObjectHideFlags: 0

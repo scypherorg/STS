@@ -7,6 +7,7 @@ public class Vibrator : MonoBehaviour
     public float RatioThreshold;
     public float ValueThreshold;
     public int TimeBuffer100MS;
+    public  float ratio;
     void Start()
     {
         timeSync.OnCompletedBundle += ReceiveData;
@@ -31,7 +32,7 @@ public class Vibrator : MonoBehaviour
         }
         if(peakIndex + TimeBuffer100MS > timeSync.sensorHistory.Length || s0Peak < ValueThreshold || s1Peak < ValueThreshold)
             return;
-        float ratio = s1Peak/s0Peak;
+        ratio = s1Peak/s0Peak;
         if(ratio < RatioThreshold)
             return;
         Debug.Log($"Triggering Virbation ({ratio}/{RatioThreshold})");

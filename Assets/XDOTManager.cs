@@ -40,16 +40,16 @@ public class XDOTManager : MonoBehaviour
             if(Mathf.Abs(history0[i].y-history1[i].y) > maxDiff)
                 maxDiff = Mathf.Abs(history0[i].y-history1[i].y);
             if(Mathf.Abs(history0[i].y) > max0)
-                max0 = history0[i].y;
+                max0 = Mathf.Abs(history0[i].y);
             if(Mathf.Abs(history1[i].y) > max1)
-                max1 = history1[i].y;
+                max1 = Mathf.Abs(history0[i].y);
         }
         history0[^1] = new Vector3(history0.Length, bundle.sensorData[0].Gyro.y);
         history1[^1] = new Vector3(history1.Length, bundle.sensorData[1].Gyro.y);
         if(Mathf.Abs(history0[^1].y) > max0)
-            max0 = history0[^1].y;
+            max0 = Mathf.Abs(history0[^1].y);
         if(Mathf.Abs(history1[^1].y) > max1)
-            max1 = history1[^1].y;
+            max1 = Mathf.Abs(history1[^1].y);
         if(max0 > vibrator.ValueThreshold && max1 > vibrator.ValueThreshold)
             maxRatio = max1/max0;
         else

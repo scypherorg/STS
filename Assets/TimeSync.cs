@@ -28,7 +28,7 @@ public class TimeSync : MonoBehaviour
             currentBatchData[i] = new(){ID=i, Acceleration = Vector3.zero, Gyro = Vector3.zero};
         }
         incompleteBundles = new();
-        sensorHistory = new SensorBundle[50];
+        sensorHistory = new SensorBundle[20];
     }
     public void AddData(uint ts, SensorData data)
     {
